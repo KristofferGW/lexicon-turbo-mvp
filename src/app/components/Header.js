@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="w-full bg-lexicon shadow-sm">
+    <header className="w-full bg-lexicon shadow-sm border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold text-xl text-white-800">
           LEXIKON TURBO
