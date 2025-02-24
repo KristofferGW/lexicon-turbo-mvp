@@ -5,7 +5,7 @@ const Header = () => {
     <header className="w-full bg-lexicon shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold text-xl text-white-800">
-          Lexikon Turbo
+          LEXIKON TURBO
         </Link>
         
         <nav>
