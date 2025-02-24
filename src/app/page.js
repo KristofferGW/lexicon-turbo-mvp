@@ -1,3 +1,4 @@
+"use client";
 import Header from './components/Header';
 import StudentName from './components/StudentName';
 
