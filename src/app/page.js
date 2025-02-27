@@ -1,4 +1,5 @@
 "use client";
+import DonutWheel from './components/DonutWheel';
 import Header from './components/Header';
 import StudentName from './components/StudentName';
 import ProgressContainer from "./components/ProgressContainer";
@@ -15,6 +16,7 @@ export default function Page({ children }) {
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
           <WordCategories />
+          <DonutWheel />
         </ProgressContainer>
         {children}
       </body>
