@@ -3,6 +3,7 @@ import Header from './components/Header';
 import StudentName from './components/StudentName';
 import ProgressContainer from "./components/ProgressContainer";
 import H2Container from './components/H2Container';
+import WordCategories from './components/WordCategories';
 
 // export default function RootLayout({ children }) {
 export default function Page({ children }) {
@@ -13,6 +14,7 @@ export default function Page({ children }) {
         <ProgressContainer>
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
+          <WordCategories />
         </ProgressContainer>
         {children}
       </body>
