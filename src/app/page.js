@@ -17,6 +17,7 @@ export default function Page({ children }) {
           <H2Container headline="👇 Overall learning progress 👇" />
           <WordCategories />
           <DonutWheel />
+          <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </ProgressContainer>
         {children}
       </body>
