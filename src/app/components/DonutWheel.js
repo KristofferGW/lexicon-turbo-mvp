@@ -5,7 +5,7 @@ export default function DonutWheel() {
           <div
             className="absolute w-full h-full rounded-full"
             style={{
-                background: 'conic-gradient(rgb(239, 68, 68) 66% 100%),rgb(34, 197, 94) 0% 33%  ,rgb(234, 179, 8) 33% 66%',
+              background: 'conic-gradient(rgb(34, 197, 94) 0% 33%, rgb(234, 179, 8) 33% 66%, rgb(239, 68, 68) 66% 100%)',
             }}
           />
           <div className="absolute w-28 h-28 rounded-full bg-lexicon top-0 left-0 right-0 bottom-0 m-auto" />
