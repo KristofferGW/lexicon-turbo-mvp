@@ -1,16 +1,26 @@
-export default function DonutWheel() {
-    return (
-      <div className="flex justify-center items-center py-4">
-        <div className="relative w-40 h-40">
-          <div
-            className="absolute w-full h-full rounded-full"
-            style={{
-              background: 'conic-gradient(rgb(34, 197, 94) 0% 33%, rgb(234, 179, 8) 33% 66%, rgb(239, 68, 68) 66% 100%)',
-            }}
-          />
-          <div className="absolute w-28 h-28 rounded-full bg-lexicon top-0 left-0 right-0 bottom-0 m-auto" />
-        </div>
-      </div>
-    );
-  }
-  
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
+
+const COLORS = ["#FF9800", "#4CAF50", "#F44336"]; // Orange, Green, Red
+
+export default function DonutWheel({ studentProgress }) {
+  return (
+    <PieChart width={400} height={300}>
+      <Pie
+        data={studentProgress}
+        cx="50%"
+        cy="50%"
+        innerRadius={60} // Makes it a donut
+        outerRadius={100}
+        fill="#8884d8"
+        paddingAngle={3}
+        dataKey="value"
+        label={({ index, value }) => `${studentProgress[index].category}: ${value}`}
+      >
+        {studentProgress.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index]} />
+        ))}
+      </Pie>
+      <Tooltip />
+    </PieChart>
+  );
+}
