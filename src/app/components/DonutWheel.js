@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { useRef, useEffect } from 'react';
 
-export default function DonutWheel() {
+export default function DonutWheel({ studentProgress }) {
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function DonutWheel() {
     const innerRadius = radius - 40; // just a bit smaller to create the "donut" effect
 
     const pieGenerator = d3.pie().value((d) => d.value);
-    const pieData = pieGenerator(data);
+    const pieData = pieGenerator(studentProgress);
 
     const arcPathGenerator = d3.arc()
       .innerRadius(innerRadius)
@@ -23,12 +23,27 @@ export default function DonutWheel() {
       .append("g")
       .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    // Create the donut chart slices
+    // Custom color mapping array based on your specifications:
+    const customColors = ['red', 'green', 'yellow', 'blue', 'orange', 'purple', 'pink', 'brown', 'grey', 'violet'];
+
+    // Manually map your custom colors to each slice based on the index
     svg.selectAll("path")
       .data(pieData)
       .enter().append("path")
       .attr("d", arcPathGenerator)
-      .attr("fill", (d, i) => d3.schemeCategory10[i % 10]);
+      .attr("fill", (d, i) => {
+        // Map the color based on the index for each segment
+        const colorMap = {
+          'green': 'red',   // Green -> Red
+          'yellow': 'green', // Yellow -> Green
+          'purple': 'yellow', // Purple -> Yellow
+        };
+        
+        const originalColor = d3.schemeCategory10[i % 10];
+
+        // Return the mapped color
+        return colorMap[originalColor] || originalColor;
+      });
 
     // Add the labels
     svg.selectAll("text")
@@ -41,7 +56,7 @@ export default function DonutWheel() {
       .attr("text-anchor", "middle")
       .attr("fill", "white")
       .text((d) => d.data.name);
-  }, []);
+  }, [studentProgress]);
 
   return (
     <div className="flex justify-center items-center py-4">

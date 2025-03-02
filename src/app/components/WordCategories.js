@@ -1,5 +1,4 @@
 export default function WordCategories({familiar, mastered, unfamiliar}) {
-  const unfamiliarWords = 198;
 
   return (
     <div className="w-[636px] mx-auto flex">

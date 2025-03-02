@@ -32,7 +32,7 @@ export default function Page({ children }) {
             mastered={studentProgress[1].value} 
             unfamiliar={studentProgress[2].value} 
           />
-          {/* <DonutWheel /> */}
+          <DonutWheel data={studentProgress} />
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </BgColorComponent>
         <BgColorComponent bgColor="white">
