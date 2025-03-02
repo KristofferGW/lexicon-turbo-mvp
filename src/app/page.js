@@ -13,6 +13,12 @@ const chapterCardsContent = [
   {number: "3", title: "Interactions", units: "99", mastered: "0"},
 ]
 
+const studentProgress = [
+  { category: "Familiar", value: 12 },
+  { category: "Mastered", value: 34 },
+  { category: "Unfamiliar", value: 53 },
+]
+
 export default function Page({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -21,8 +27,12 @@ export default function Page({ children }) {
         <BgColorComponent>
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
-          <WordCategories />
-          <DonutWheel />
+          <WordCategories 
+            familiar={studentProgress[0].value} 
+            mastered={studentProgress[1].value} 
+            unfamiliar={studentProgress[2].value} 
+          />
+          {/* <DonutWheel /> */}
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </BgColorComponent>
         <BgColorComponent bgColor="white">

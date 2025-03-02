@@ -1,16 +1,51 @@
+import * as d3 from 'd3';
+import { useRef, useEffect } from 'react';
+
 export default function DonutWheel() {
-    return (
-      <div className="flex justify-center items-center py-4">
-        <div className="relative w-40 h-40">
-          <div
-            className="absolute w-full h-full rounded-full"
-            style={{
-              background: 'conic-gradient(rgb(34, 197, 94) 0% 33%, rgb(234, 179, 8) 33% 66%, rgb(239, 68, 68) 66% 100%)',
-            }}
-          />
-          <div className="absolute w-28 h-28 rounded-full bg-lexicon top-0 left-0 right-0 bottom-0 m-auto" />
-        </div>
-      </div>
-    );
-  }
-  
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    const width = 200;
+    const height = 200;
+    const radius = Math.min(width, height) / 2;
+    const innerRadius = radius - 40; // just a bit smaller to create the "donut" effect
+
+    const pieGenerator = d3.pie().value((d) => d.value);
+    const pieData = pieGenerator(data);
+
+    const arcPathGenerator = d3.arc()
+      .innerRadius(innerRadius)
+      .outerRadius(radius);
+
+    const svg = d3.select(svgRef.current)
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+    // Create the donut chart slices
+    svg.selectAll("path")
+      .data(pieData)
+      .enter().append("path")
+      .attr("d", arcPathGenerator)
+      .attr("fill", (d, i) => d3.schemeCategory10[i % 10]);
+
+    // Add the labels
+    svg.selectAll("text")
+      .data(pieData)
+      .enter().append("text")
+      .attr("transform", (d) => {
+        const centroid = arcPathGenerator.centroid(d);
+        return `translate(${centroid})`;
+      })
+      .attr("text-anchor", "middle")
+      .attr("fill", "white")
+      .text((d) => d.data.name);
+  }, []);
+
+  return (
+    <div className="flex justify-center items-center py-4">
+      <svg ref={svgRef}></svg>
+    </div>
+  );
+}
