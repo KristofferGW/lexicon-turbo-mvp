@@ -6,7 +6,7 @@ export default function WordCategories({familiar, mastered, unfamiliar}) {
         Mastered: {mastered}
       </div>
 
-      <div className="flex-1 bg-yellow-500 text-grey-800 flex items-center justify-center font-medium">
+      <div className="flex-1 bg-lexiconyellow text-grey-800 flex items-center justify-center font-medium">
         Familiar: {familiar}
       </div>
       

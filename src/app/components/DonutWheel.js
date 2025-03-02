@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
-const COLORS = ["#FF9800", "#4CAF50", "#F44336"]; // Orange, Green, Red
+const COLORS = ["#FDE047", "#4CAF50", "#F44336"]; // Orange, Green, Red
 
 export default function DonutWheel({ studentProgress }) {
   return (

@@ -10,7 +10,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        lexicon: "#0A2503"
+        lexicon: "#0A2503",
+        lexiconyellow: "#FDE047"
       },
     },
   },

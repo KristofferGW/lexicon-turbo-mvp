@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import ChapterCard from './components/ChapterCard';
+import ThemeCard from './components/ThemeCard';
 import Header from './components/Header';
 import StudentName from './components/StudentName';
 import BgColorComponent from "./components/BgColorComponent";
@@ -10,7 +10,7 @@ import WordCategories from './components/WordCategories';
 // Ladda DonutWheel endast på klienten
 const DonutWheel = dynamic(() => import("./components/DonutWheel"), { ssr: false });
 
-const chapterCardsContent = [
+const ThemeCardsContent = [
   {number: "1", title: "Brief greetings", units: "33", mastered: "0"},
   {number: "2", title: "Interactions", units: "66", mastered: "0"},
   {number: "3", title: "Interactions", units: "99", mastered: "0"},
@@ -42,8 +42,8 @@ export default function Page({ children }) {
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </BgColorComponent>
         <BgColorComponent bgColor="white">
-          {chapterCardsContent.map((chapter) => (
-            <ChapterCard
+          {ThemeCardsContent.map((chapter) => (
+            <ThemeCard
               key={chapter.number} 
               number={chapter.number}
               title={chapter.title}
