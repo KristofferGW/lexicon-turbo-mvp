@@ -1,4 +1,5 @@
-import { useRouter } from 'next/navigation';
+"use client";
+import { useParams } from 'next/navigation';
 
 const themeData = {
   "brief-greetings": {
@@ -7,7 +8,6 @@ const themeData = {
     vocabulary: [
       { word: "Hello", translation: "Hej" },
       { word: "Good morning", translation: "God morgon" },
-      // Lägg till fler glosor här
     ]
   },
   "eating-out": {
@@ -16,7 +16,6 @@ const themeData = {
     vocabulary: [
       { word: "Menu", translation: "Meny" },
       { word: "Waiter", translation: "Servitör" },
-      // Lägg till fler glosor här
     ]
   },
   "applying-for-jobs": {
@@ -25,20 +24,19 @@ const themeData = {
     vocabulary: [
       { word: "Resume", translation: "CV" },
       { word: "Interview", translation: "Intervju" },
-      // Lägg till fler glosor här
     ]
   }
 };
 
-const ThemePage = () => {
-  const { query } = useRouter();
-  const { theme } = query; // Dynamisk parameter från URL:en
-
+export default function ThemePage() {
+  const { theme } = useParams();
+  console.log("Theme parameter: ", theme);
+  
   // Hämta data baserat på URL-parametern
   const themeContent = themeData[theme];
 
   if (!themeContent) {
-    return <p>Theme not found</p>; // Om temat inte finns, visa ett meddelande
+    return <p>Theme not found</p>;
   }
 
   return (
@@ -63,5 +61,3 @@ const ThemePage = () => {
     </div>
   );
 };
-
-export default ThemePage;
