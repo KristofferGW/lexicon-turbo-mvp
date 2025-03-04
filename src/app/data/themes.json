@@ -1,6 +1,8 @@
 [
     {
+      "themeId": 1,
       "name": "1 > Brief greetings",
+      "videoUrl": "https://www.youtube.com/1",
       "words": [
         { "swedish": "Hej", "english": "Hello", "status": "Mastered" },
         { "swedish": "Hej då", "english": "Good bye", "status": "Familiar" },
@@ -8,7 +10,9 @@
       ]
     },
     {
+      "themeId": 2,
       "name": "2 > Eating out",
+      "videoUrl": "https://www.youtube.com/2",
       "words": [
         { "swedish": "Meny", "english": "Menu", "status": "Mastered" },
         { "swedish": "Servitör", "english": "Waiter", "status": "Familiar" },
@@ -16,7 +20,9 @@
       ]
     },
     {
+      "themeId": 3,
       "name": "3 > Applying for jobs",
+      "videoUrl": "https://www.youtube.com/3",
       "words": [
         { "swedish": "CV", "english": "Resume", "status": "Mastered" },
         { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },

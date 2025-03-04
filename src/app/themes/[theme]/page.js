@@ -1,69 +1,63 @@
 "use client";
 import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import BgColorComponent from '@/app/components/BgColorComponent';
 import Header from '@/app/components/Header';
 import H2Container from '@/app/components/H2Container';
 
-const themeData = {
-  "brief-greetings": {
-    title: "Brief Greetings",
-    videoUrl: "https://www.youtube.com/embed/example_video_1",
-    vocabulary: [
-      { word: "Hello", translation: "Hej" },
-      { word: "Good morning", translation: "God morgon" },
-    ]
-  },
-  "eating-out": {
-    title: "Eating Out",
-    videoUrl: "https://www.youtube.com/embed/example_video_2",
-    vocabulary: [
-      { word: "Menu", translation: "Meny" },
-      { word: "Waiter", translation: "Servitör" },
-    ]
-  },
-  "applying-for-jobs": {
-    title: "Applying for Jobs",
-    videoUrl: "https://www.youtube.com/embed/example_video_3",
-    vocabulary: [
-      { word: "Resume", translation: "CV" },
-      { word: "Interview", translation: "Intervju" },
-    ]
-  }
-};
+export default function ThemePage() {
+  const { theme } = useParams(); // theme motsvarar themeId i din API endpoint
+  const [themeData, setThemeData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-export default function ThemePage({ numOfUnits }) {
-  const { theme } = useParams();
-  console.log("Theme parameter: ", theme);
-  
-  // Hämta data baserat på URL-parametern
-  const themeContent = themeData[theme];
+  useEffect(() => {
+    if (!theme) return;
 
-  if (!themeContent) {
-    return <p>Theme not found</p>;
-  }
+    fetch(`/api/themes/${theme}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setThemeData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error fetching theme:', err);
+        setError(err);
+        setLoading(false);
+      });
+  }, [theme]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  if (!themeData) return <p>Theme not found</p>;
 
   return (
     <div>
       <Header />
       <BgColorComponent>
-        <H2Container headline={`1 > Brief greetings (${numOfUnits} units)`} />
+        <H2Container headline={`${themeData.name}`} />
       </BgColorComponent>
       <iframe
         width="560"
         height="315"
-        src={themeContent.videoUrl}
+        src={themeData.videoUrl}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
       <h2>Vocabulary</h2>
       <ul>
-        {themeContent.vocabulary.map((item, index) => (
+        {themeData.words.map((item, index) => (
           <li key={index}>
-            <strong>{item.word}</strong> - {item.translation}
+            <strong>{item.swedish}</strong> - {item.english}
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
