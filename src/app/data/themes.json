@@ -1,0 +1,27 @@
+[
+    {
+      "name": "1 > Brief greetings",
+      "words": [
+        { "swedish": "Hej", "english": "Hello", "status": "Mastered" },
+        { "swedish": "Hej då", "english": "Good bye", "status": "Familiar" },
+        { "swedish": "Läget?", "english": "What's up?", "status": "Unfamiliar" }
+      ]
+    },
+    {
+      "name": "2 > Eating out",
+      "words": [
+        { "swedish": "Meny", "english": "Menu", "status": "Mastered" },
+        { "swedish": "Servitör", "english": "Waiter", "status": "Familiar" },
+        { "swedish": "Räkning", "english": "Bill", "status": "Unfamiliar" }
+      ]
+    },
+    {
+      "name": "3 > Applying for jobs",
+      "words": [
+        { "swedish": "CV", "english": "Resume", "status": "Mastered" },
+        { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },
+        { "swedish": "Anställning", "english": "Employment", "status": "Unfamiliar" }
+      ]
+    }
+  ]
+  

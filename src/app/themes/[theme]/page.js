@@ -1,5 +1,8 @@
 "use client";
 import { useParams } from 'next/navigation';
+import BgColorComponent from '@/app/components/BgColorComponent';
+import Header from '@/app/components/Header';
+import H2Container from '@/app/components/H2Container';
 
 const themeData = {
   "brief-greetings": {
@@ -28,7 +31,7 @@ const themeData = {
   }
 };
 
-export default function ThemePage() {
+export default function ThemePage({ numOfUnits }) {
   const { theme } = useParams();
   console.log("Theme parameter: ", theme);
   
@@ -41,7 +44,10 @@ export default function ThemePage() {
 
   return (
     <div>
-      <h1>{themeContent.title}</h1>
+      <Header />
+      <BgColorComponent>
+        <H2Container headline={`1 > Brief greetings (${numOfUnits} units)`} />
+      </BgColorComponent>
       <iframe
         width="560"
         height="315"

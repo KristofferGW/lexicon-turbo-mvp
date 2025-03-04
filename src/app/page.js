@@ -1,6 +1,8 @@
 "use client";
+import { createContext } from "react";
 import dynamic from "next/dynamic";
 import ThemeCard from './components/ThemeCard';
+import ThemePage from "./themes/[theme]/page";
 import Header from './components/Header';
 import StudentName from './components/StudentName';
 import BgColorComponent from "./components/BgColorComponent";
@@ -9,6 +11,8 @@ import WordCategories from './components/WordCategories';
 
 // Ladda DonutWheel endast på klienten
 const DonutWheel = dynamic(() => import("./components/DonutWheel"), { ssr: false });
+
+export const UnitsContext = createContext();
 
 const ThemeCardsContent = [
   {number: "1", title: "Brief greetings", units: "33", mastered: "0"},
