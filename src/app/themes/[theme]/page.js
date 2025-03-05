@@ -2,8 +2,9 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import BgColorComponent from '@/app/components/BgColorComponent';
+import FullWidthH2Container from '@/app/components/FullWidthH2Container';
 import Header from '@/app/components/Header';
-import H2Container from '@/app/components/H2Container';
+import VideoContainer from '@/app/components/VideoContainer';
 
 export default function ThemePage() {
   // Parametern heter "theme" (från URL:en)
@@ -41,7 +42,8 @@ export default function ThemePage() {
     <div>
       <Header />
       <BgColorComponent>
-        <H2Container headline={`${themeData.name}`} />
+        <FullWidthH2Container headline={`${themeData.name}`} />
+        <VideoContainer videoUrl={`${themeData.videoUrl}`} />
       </BgColorComponent>
       <iframe
         width="560"
