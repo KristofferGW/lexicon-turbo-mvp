@@ -5,6 +5,7 @@ import BgColorComponent from '@/app/components/BgColorComponent';
 import FullWidthH2Container from '@/app/components/FullWidthH2Container';
 import Header from '@/app/components/Header';
 import VideoContainer from '@/app/components/VideoContainer';
+import VocabularyContainer from '@/app/components/VocabularyContainer';
 
 export default function ThemePage() {
   // Parametern heter "theme" (från URL:en)
@@ -45,14 +46,10 @@ export default function ThemePage() {
         <FullWidthH2Container headline={`${themeData.name}`} />
         <VideoContainer videoUrl={`${themeData.videoUrl}`} />
       </BgColorComponent>
-      <iframe
-        width="560"
-        height="315"
-        src={themeData.videoUrl}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+      <BgColorComponent bgColor="white">
+
+      </BgColorComponent>
+      <VocabularyContainer words={themeData.words}/>
       <h2>Vocabulary</h2>
       <ul>
         {themeData.words.map((item, index) => (
