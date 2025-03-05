@@ -6,7 +6,8 @@ import Header from '@/app/components/Header';
 import H2Container from '@/app/components/H2Container';
 
 export default function ThemePage() {
-  const { theme } = useParams(); // theme motsvarar themeId i din API endpoint
+  // Parametern heter "theme" (från URL:en)
+  const { theme } = useParams();
   const [themeData, setThemeData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

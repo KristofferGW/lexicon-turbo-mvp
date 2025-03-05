@@ -1,6 +1,6 @@
 [
     {
-      "themeId": 1,
+      "themeUrl": "brief-greetings",
       "name": "1 > Brief greetings",
       "videoUrl": "https://www.youtube.com/1",
       "words": [
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "themeId": 2,
+      "themeUrl": "eating-out",
       "name": "2 > Eating out",
       "videoUrl": "https://www.youtube.com/2",
       "words": [
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "themeId": 3,
+      "themeUrl": "applying-for-jobs",
       "name": "3 > Applying for jobs",
       "videoUrl": "https://www.youtube.com/3",
       "words": [
