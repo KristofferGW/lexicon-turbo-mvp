@@ -25,22 +25,39 @@ export default function VocabularyContainer({ words }) {
         </div>
       </div>
 
-      {/* En “rad” per ord */}
       {words.map((item, index) => (
         <div key={index} className="flex h-[50px] text-white">
-          {/* Ordkolumnen */}
+          {/* Index-kolumn */}
           <div
-            className="flex items-center justify-between border border-gray-300 px-2"
-            style={{ width: '75%' }}
+            className="flex items-center justify-center border border-gray-300 px-2"
+            style={{ width: '5%' }}
           >
-            {/* Här kan du styra om du vill visa "Sve" och "Eng" på två separata rader 
-                eller i samma cell, beroende på hur du vill ha layouten. */}
-            <span>
-              <strong>Sve:</strong> {item.swedish}
-            </span>
-            <span>
-              <strong>Eng:</strong> {item.english}
-            </span>
+            {index + 1}
+          </div>
+
+          {/* Ordkolumnen med två rader */}
+          <div
+            className="flex flex-col justify-center border border-gray-300 px-2"
+            style={{ width: '70%' }}
+          >
+            {/* Första raden – Svenska */}
+            <div className="flex items-center border border-white" style={{ height: '50%' }}>
+              <div className="w-[30%]">
+                <strong>Sve:</strong>
+              </div>
+              <div className="bg-white text-black w-[70%] border border-gray">
+                {item.swedish}
+              </div>
+            </div>
+            {/* Andra raden – Engelska */}
+            <div className="flex items-center" style={{ height: '50%' }}>
+              <div className="w-[30%] border border-white">
+                <strong>Eng:</strong>
+              </div>
+              <div className="bg-white text-black w-[70%]">
+                {item.english}
+              </div>
+            </div>
           </div>
 
           {/* Ögon-ikonen */}
@@ -53,16 +70,17 @@ export default function VocabularyContainer({ words }) {
             </span>
           </div>
 
-          {/* Learning-statusen */}
+          {/* Learning-status */}
           <div
             className="flex items-center justify-center border border-gray-300"
             style={{ width: '15%' }}
           >
-            {/* Exempelvis en hårdkodad status eller en dropdown/select om du vill */}
             <span className="bg-green-200 px-2 py-1 rounded">Familiar</span>
           </div>
         </div>
       ))}
+
+
     </div>
   );
 }
