@@ -50,14 +50,6 @@ export default function ThemePage() {
 
       </BgColorComponent>
       <VocabularyContainer words={themeData.words}/>
-      <h2>Vocabulary</h2>
-      <ul>
-        {themeData.words.map((item, index) => (
-          <li key={index}>
-            <strong>{item.swedish}</strong> - {item.english}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

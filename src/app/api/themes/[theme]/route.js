@@ -3,9 +3,9 @@ import path from 'path';
 
 export async function GET(request, context) {
   // Vänta på context och hämta params
-  const { params } = await context;
+  const { params } = context;
   // Eftersom mappen heter [theme] så kommer parametern att heta "theme"
-  const { theme } = params;
+  const { theme } = await  params;
   
   // Ange sökvägen till din JSON-fil
   const filePath = path.join(process.cwd(), 'src', 'app', 'data', 'themes.json');
