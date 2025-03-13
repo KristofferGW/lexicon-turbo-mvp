@@ -28,19 +28,19 @@ export default function VocabularyContainer({ words }) {
           <div className="flex flex-col justify-center border border-gray-300" style={{ width: '70%' }}>
             {/* Första raden – Svenska */}
             <div className="flex items-center border border-white">
-              <div className="px-2">
-                <strong>Sve:</strong>
+              <div className="px-2 py-4">
+                <strong>Sve</strong>
               </div>
-              <div className="flex-grow bg-white text-black border border-gray">
+              <div className="flex-grow bg-white text-black text-center border border-gray py-4">
                 {item.swedish}
               </div>
             </div>
             {/* Andra raden – Engelska */}
-            <div className="flex items-center border border-white">
-              <div className="px-2">
-                <strong>Eng:</strong>
+            <div className="flex items-center text-center border border-white">
+              <div className="px-2 py-4">
+                <strong>Eng</strong>
               </div>
-              <div className="flex-grow bg-white text-black border border-gray">
+              <div className="flex-grow bg-white text-black border border-gray py-4">
                 {item.english}
               </div>
             </div>
@@ -55,13 +55,14 @@ export default function VocabularyContainer({ words }) {
 
           {/* Learning-status med staplade rutor */}
           <div
-            className="flex flex-col items-center space-y-1 border border-gray-300 p-1"
-            style={{ width: '15%' }}
+            className="flex flex-col border border-gray-300"
+            style={{ width: '15%', height: '120px' }}  // sätt en höjd så att flex-fördelningen blir synlig
           >
-            <span className="bg-green-200 px-2 py-1 rounded">Mastered</span>
-            <span className="bg-green-200 px-2 py-1 rounded">Familiar</span>
-            <span className="bg-green-200 px-2 py-1 rounded">Unfamiliar</span>
+            <span className="flex-1 w-full bg-green-500 flex items-center justify-center">Mastered</span>
+            <span className="flex-1 w-full bg-lexiconyellow flex items-center justify-center">Familiar</span>
+            <span className="flex-1 w-full bg-red-500 flex items-center justify-center">Unfamiliar</span>
           </div>
+
         </div>
       ))}
     </div>
