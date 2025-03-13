@@ -2,7 +2,6 @@
 import { createContext } from "react";
 import dynamic from "next/dynamic";
 import ThemeCard from './components/ThemeCard';
-import ThemePage from "./themes/[theme]/page";
 import Header from './components/Header';
 import StudentName from './components/StudentName';
 import BgColorComponent from "./components/BgColorComponent";
