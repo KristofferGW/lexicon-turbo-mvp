@@ -7,6 +7,7 @@ export default function DonutWheel({ studentProgress }) {
     <PieChart width={400} height={300}>
       <Pie
         data={studentProgress}
+        nameKey="category"
         cx="50%"
         cy="50%"
         innerRadius={60} // Makes it a donut
