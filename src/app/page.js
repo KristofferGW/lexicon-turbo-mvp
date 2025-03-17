@@ -6,7 +6,6 @@ import Header from './components/Header';
 import StudentName from './components/StudentName';
 import BgColorComponent from "./components/BgColorComponent";
 import H2Container from './components/H2Container';
-import WordCategories from './components/WordCategories';
 
 // Ladda DonutWheel endast på klienten
 const DonutWheel = dynamic(() => import("./components/DonutWheel"), { ssr: false });
@@ -33,11 +32,6 @@ export default function Page({ children }) {
         <BgColorComponent>
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
-          <WordCategories 
-            familiar={studentProgress[0].value} 
-            mastered={studentProgress[1].value} 
-            unfamiliar={studentProgress[2].value} 
-          />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
           <DonutWheel studentProgress={studentProgress} />
           </div>
