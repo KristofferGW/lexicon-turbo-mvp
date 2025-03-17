@@ -6,6 +6,7 @@ import FullWidthH2Container from '@/app/components/FullWidthH2Container';
 import Header from '@/app/components/Header';
 import VideoContainer from '@/app/components/VideoContainer';
 import VocabularyContainer from '@/app/components/VocabularyContainer';
+import VocabularyHeadings from '@/app/components/VocabularyHeadings';
 
 export default function ThemePage() {
   // Parametern heter "theme" (från URL:en)
@@ -46,9 +47,10 @@ export default function ThemePage() {
         <BgColorComponent>
           <FullWidthH2Container headline={`${themeData.name}`} />
           <VideoContainer videoUrl={`${themeData.videoUrl}`} />
+          <VocabularyHeadings />
         </BgColorComponent>
       </div>
-      <div className="pt-[430px]">
+      <div className="pt-[480px]">
         <BgColorComponent bgColor="white">
         </BgColorComponent>
         <VocabularyContainer words={themeData.words}/>
