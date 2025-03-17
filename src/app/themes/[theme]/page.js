@@ -41,15 +41,18 @@ export default function ThemePage() {
 
   return (
     <div>
-      <Header />
-      <BgColorComponent>
-        <FullWidthH2Container headline={`${themeData.name}`} />
-        <VideoContainer videoUrl={`${themeData.videoUrl}`} />
-      </BgColorComponent>
-      <BgColorComponent bgColor="white">
-
-      </BgColorComponent>
-      <VocabularyContainer words={themeData.words}/>
+      <div className="fixed top-0 left-0 right-0 z-10">
+        <Header />
+        <BgColorComponent>
+          <FullWidthH2Container headline={`${themeData.name}`} />
+          <VideoContainer videoUrl={`${themeData.videoUrl}`} />
+        </BgColorComponent>
+      </div>
+      <div className="pt-[430px]">
+        <BgColorComponent bgColor="white">
+        </BgColorComponent>
+        <VocabularyContainer words={themeData.words}/>
+      </div>
     </div>
   );
 }

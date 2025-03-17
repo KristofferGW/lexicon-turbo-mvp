@@ -26,7 +26,10 @@
       "words": [
         { "swedish": "CV", "english": "Resume", "status": "Mastered" },
         { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },
-        { "swedish": "Anställning", "english": "Employment", "status": "Unfamiliar" }
+        { "swedish": "Anställning", "english": "Employment", "status": "Unfamiliar" },
+        { "swedish": "Lön", "english": "Salary", "status": "Unfamiliar" },
+        { "swedish": "Uppsägningsperiod", "english": "Notice period", "status": "Familiar" },
+        { "swedish": "Tillsvidareanställning", "english": "Permanent employment", "status": "Unfamiliar" }
       ]
     }
   ]
