@@ -10,17 +10,8 @@ export default function VocabularyContainer({ words }) {
             {index + 1}
           </div>
 
-          {/* Ordkolumn med Sve och Eng */}
+          {/* Ordkolumn med Eng och Sve */}
           <div className="flex flex-col justify-center border border-gray-300" style={{ width: '70%' }}>
-            {/* Första raden – Svenska */}
-            <div className="flex items-center border border-white">
-              <div className="px-2 py-4">
-                <strong>Sve</strong>
-              </div>
-              <div className="flex-grow bg-white text-black text-center border border-gray py-4">
-                {item.swedish}
-              </div>
-            </div>
             {/* Andra raden – Engelska */}
             <div className="flex items-center text-center border border-white">
               <div className="px-2 py-4">
@@ -28,6 +19,15 @@ export default function VocabularyContainer({ words }) {
               </div>
               <div className="flex-grow bg-white text-black border border-gray py-4">
                 {item.english}
+              </div>
+            </div>
+            {/* Första raden – Svenska */}
+            <div className="flex items-center border border-white">
+              <div className="px-2 py-4">
+                <strong>Sve</strong>
+              </div>
+              <div className="flex-grow bg-white text-black text-center border border-gray py-4">
+                {item.swedish}
               </div>
             </div>
           </div>
