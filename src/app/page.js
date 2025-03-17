@@ -33,11 +33,6 @@ export default function Page({ children }) {
         <BgColorComponent>
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
-          <WordCategories 
-            familiar={studentProgress[0].value} 
-            mastered={studentProgress[1].value} 
-            unfamiliar={studentProgress[2].value} 
-          />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
           <DonutWheel studentProgress={studentProgress} />
           </div>
