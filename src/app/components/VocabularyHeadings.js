@@ -1,11 +1,16 @@
-export default function VocabularyHeadings() {
+export default function VocabularyHeadings({ onEyeClick }) {
     return (
         <div className="flex w-[636px] h-[50px] mx-auto text-white">
             <div className="flex items-center justify-center border border-white" style={{ width: '75%' }}>
                 <h2 className="text-xl font-bold">Vocabulary</h2>
             </div>
             <div className="flex items-center justify-center border border-white" style={{ width: '10%' }}>
-                <span role="img" aria-label="eye">
+                <span
+                    role="img"
+                    aria-label="eye"
+                    onClick={onEyeClick}
+                    style={{ cursor: 'pointer' }}    
+                >
                     👁️
                 </span>
             </div>

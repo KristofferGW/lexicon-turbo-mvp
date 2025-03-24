@@ -14,6 +14,9 @@ export default function ThemePage() {
   const [themeData, setThemeData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showEnglish, setShowEnglish] = useState(true);
+
+  const toggleEnglish = () => setShowEnglish((prev) => !prev);
 
   useEffect(() => {
     if (!theme) return;
@@ -47,13 +50,13 @@ export default function ThemePage() {
         <BgColorComponent>
           <FullWidthH2Container headline={`${themeData.name}`} />
           <VideoContainer videoUrl={`${themeData.videoUrl}`} />
-          <VocabularyHeadings />
+          <VocabularyHeadings onEyeClick={toggleEnglish} />
         </BgColorComponent>
       </div>
       <div className="pt-[480px]">
         <BgColorComponent bgColor="white">
         </BgColorComponent>
-        <VocabularyContainer words={themeData.words}/>
+        <VocabularyContainer words={themeData.words} showEnglish={showEnglish} />
       </div>
     </div>
   );
