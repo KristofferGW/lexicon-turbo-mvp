@@ -1,4 +1,4 @@
-export default function VocabularyContainer({ words }) {
+export default function VocabularyContainer({ words, showEnglish }) {
   return (
     <div className="w-[636px] bg-lexicon mx-auto text-white">
 
@@ -12,15 +12,16 @@ export default function VocabularyContainer({ words }) {
 
           {/* Ordkolumn med Eng och Sve */}
           <div className="flex flex-col justify-center border border-gray-300" style={{ width: '70%' }}>
-            {/* Andra raden – Engelska */}
-            <div className="flex items-center text-center border border-white">
+            {showEnglish && (
+              <div className="flex items-center text-center border border-white">
               <div className="px-2 py-4">
                 <strong>Eng</strong>
               </div>
               <div className="flex-grow bg-white text-black border border-gray py-4">
                 {item.english}
               </div>
-            </div>
+              </div>
+            )}
             {/* Första raden – Svenska */}
             <div className="flex items-center border border-white">
               <div className="px-2 py-4">
