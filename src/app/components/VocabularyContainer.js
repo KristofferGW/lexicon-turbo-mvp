@@ -6,6 +6,11 @@ export default function VocabularyContainer({ words, showEnglish }) {
     words.map(() => showEnglish) // Initialize with the global showEnglish state
   );
 
+  // Track the learning status for each word
+  const [learningStatus, setLearningStatus] = useState(
+    words.map(() => "Unfamiliar") // Initialize all words as "Unfamiliar"
+  );
+
   // Update local state when global showEnglish changes
   useEffect(() => {
     setVisibilityState(words.map(() => showEnglish));
@@ -16,6 +21,15 @@ export default function VocabularyContainer({ words, showEnglish }) {
     setVisibilityState(prevState => {
       const newState = [...prevState];
       newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
+  // Update learning status for a specific word
+  const updateLearningStatus = (index, status) => {
+    setLearningStatus(prevState => {
+      const newState = [...prevState];
+      newState[index] = status;
       return newState;
     });
   };
@@ -69,9 +83,24 @@ export default function VocabularyContainer({ words, showEnglish }) {
             className="flex flex-col border border-gray-300"
             style={{ width: '15%', height: '120px' }}  // sätt en höjd så att flex-fördelningen blir synlig
           >
-            <span className="flex-1 w-full bg-green-500 flex items-center justify-center">Mastered</span>
-            <span className="flex-1 w-full bg-lexiconyellow flex items-center justify-center">Familiar</span>
-            <span className="flex-1 w-full bg-red-500 flex items-center justify-center">Unfamiliar</span>
+            <div 
+              className={`flex-1 w-full bg-green-500 flex items-center justify-center cursor-pointer ${learningStatus[index] !== "Mastered" ? "opacity-50" : ""}`}
+              onClick={() => updateLearningStatus(index, "Mastered")}
+            >
+              Mastered
+            </div>
+            <div 
+              className={`flex-1 w-full bg-lexiconyellow flex items-center justify-center cursor-pointer ${learningStatus[index] !== "Familiar" ? "opacity-50" : ""}`}
+              onClick={() => updateLearningStatus(index, "Familiar")}
+            >
+              Familiar
+            </div>
+            <div 
+              className={`flex-1 w-full bg-red-500 flex items-center justify-center cursor-pointer ${learningStatus[index] !== "Unfamiliar" ? "opacity-50" : ""}`}
+              onClick={() => updateLearningStatus(index, "Unfamiliar")}
+            >
+              Unfamiliar
+            </div>
           </div>
         </div>
       ))}
