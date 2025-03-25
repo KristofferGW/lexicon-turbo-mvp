@@ -1,5 +1,5 @@
 "use client";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from 'next/link';
 import ThemeCard from './components/ThemeCard';
@@ -26,6 +26,34 @@ const studentProgress = [
 ];
 
 export default function Page({ children }) {
+  const [themes, setThemes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/themes')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Nätverksfel: Kunde inte hämta teman');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setThemes(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error fetching themes:', err);
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Laddar...</p>;
+  if (error) return <p>Error: {error.message}</p>
+
+  console.log('Themes: ', themes);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
