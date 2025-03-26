@@ -84,17 +84,22 @@ export default function Page({ children }) {
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </BgColorComponent>
         <BgColorComponent bgColor="white">
-          {ThemeCardsContent.map((chapter) => (
-            <Link key={chapter.number} href={`/themes/${chapter.slug}`} passHref>
-              <ThemeCard
-                key={chapter.number} 
-                number={chapter.number}
-                title={chapter.title}
-                units={chapter.units}
-                mastered={chapter.mastered}
-              />
-            </Link>
-          ))}
+          {themes.map((theme) => {
+            const [number, title] = theme.name.split(" > ");
+            const units = theme.words.length;
+            const mastered = theme.words.filter(word => word.status === "Mastered").length;
+            return (
+              <Link key={theme.themeUrl} href={`/themes/${theme.themeUrl}`} passHref>
+                <ThemeCard
+                  key={theme.themeUrl}
+                  number={number}
+                  title={title}
+                  units={units}
+                  mastered={mastered}
+                />
+              </Link>
+            )
+          })}
         </BgColorComponent>
         {children}
       </body>
