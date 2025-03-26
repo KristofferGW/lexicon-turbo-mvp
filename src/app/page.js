@@ -19,11 +19,27 @@ const ThemeCardsContent = [
   {number: "3", title: "Eating out", units: "99", mastered: "0", slug: "eating-out"},
 ];
 
-const studentProgress = [
-  { category: "Familiar", value: 12 },
-  { category: "Mastered", value: 34 },
-  { category: "Unfamiliar", value: 53 },
-];
+function computeStudentProgress(themes) {
+  const progressCount = {
+    Familiar: 0,
+    Mastered: 0,
+    Unfamiliar: 0,
+  };
+
+  themes.forEach(theme => {
+    theme.words.forEach(word => {
+      if (progressCount.hasOwnProperty(word.status)) {
+        progressCount[word.status]++;
+      }
+    });
+  });
+
+  return [
+    { category: "Familiar", value: progressCount.Familiar },
+    { category: "Mastered", value: progressCount.Mastered },
+    { category: "Unfamiliar", value: progressCount.Unfamiliar},
+  ]
+}
 
 export default function Page({ children }) {
   const [themes, setThemes] = useState([]);
@@ -52,7 +68,7 @@ export default function Page({ children }) {
   if (loading) return <p>Laddar...</p>;
   if (error) return <p>Error: {error.message}</p>
 
-  console.log('Themes: ', themes);
+  const aggregatedStudentProgress = computeStudentProgress(themes);
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -62,7 +78,7 @@ export default function Page({ children }) {
           <StudentName name="John Doe" />
           <H2Container headline="👇 Overall learning progress 👇" />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-          <DonutWheel studentProgress={studentProgress} />
+          <DonutWheel studentProgress={aggregatedStudentProgress} />
           </div>
 
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
