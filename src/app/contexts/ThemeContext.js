@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider({ children }) {
+export function ThemeProvider({ children }) {
     const [themes, setThemes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -46,5 +46,3 @@ return (
     </ThemeContext.Provider>
     );
 }
-
-// https://chatgpt.com/share/67e43035-e374-8011-b02c-10ddd9e65871

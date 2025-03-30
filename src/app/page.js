@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import dynamic from "next/dynamic";
 import Link from 'next/link';
 import ThemeCard from './components/ThemeCard';
@@ -30,7 +30,7 @@ export default function Page({ children }) {
     return [
       { category: "Familiar", value: progressCount.Familiar },
       { category: "Mastered", value: progressCount.Mastered },
-      { category: "Familiar", value: progressCount.Unfamiliar },
+      { category: "Unfamiliar", value: progressCount.Unfamiliar },
     ];
   };
 
