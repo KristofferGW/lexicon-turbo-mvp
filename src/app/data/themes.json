@@ -1,47 +1,90 @@
 [
-    {
-      "themeUrl": "brief-greetings",
-      "name": "1 > Brief greetings",
-      "videoUrl": "https://www.youtube.com/1",
-      "words": [
-        { "swedish": "Hej", "english": "Hello", "status": "Mastered" },
-        { "swedish": "Hej då", "english": "Good bye", "status": "Familiar" },
-        { "swedish": "Läget?", "english": "What's up?", "status": "Unfamiliar" }
-      ]
-    },
-    {
-      "themeUrl": "eating-out",
-      "name": "2 > Eating out",
-      "videoUrl": "https://www.youtube.com/2",
-      "words": [
-        { "swedish": "Meny", "english": "Menu", "status": "Mastered" },
-        { "swedish": "Servitör", "english": "Waiter", "status": "Familiar" },
-        { "swedish": "Räkning", "english": "Bill", "status": "Unfamiliar" }
-      ]
-    },
-    {
-      "themeUrl": "applying-for-jobs",
-      "name": "3 > Applying for jobs",
-      "videoUrl": "https://youtube.com/embedHOYmLl3LHo",
-      "words": [
-        { "swedish": "CV", "english": "Resume", "status": "Mastered" },
-        { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },
-        { "swedish": "Anställning", "english": "Employment", "status": "Unfamiliar" },
-        { "swedish": "Lön", "english": "Salary", "status": "Unfamiliar" },
-        { "swedish": "Uppsägningsperiod", "english": "Notice period", "status": "Familiar" },
-        { "swedish": "Tillsvidareanställning", "english": "Permanent employment", "status": "Unfamiliar" }
-      ]
-    },
-    {
-      "themeUrl": "travel-essentials",
-      "name": "4 > Travel essentials",
-      "videoUrl": "https://www.youtube.com/4",
-      "words": [
-        { "swedish": "Pass", "english": "Passport", "status": "Mastered" },
-        { "swedish": "Biljett", "english": "Ticket", "status": "Familiar" },
-        { "swedish": "Bagage", "english": "Baggage", "status": "Unfamiliar" },
-        { "swedish": "Resväg", "english": "Itinerary", "status": "Mastered" }
-      ]
-    }    
-  ]
-  
+  {
+    "themeUrl": "brief-greetings",
+    "name": "1 > Brief greetings",
+    "videoUrl": "https://www.youtube.com/1",
+    "words": [
+      { "swedish": "Hej", "english": "Hello", "status": "Mastered" },
+      { "swedish": "Hej då", "english": "Good bye", "status": "Familiar" },
+      { "swedish": "Läget?", "english": "What's up?", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "eating-out",
+    "name": "2 > Eating out",
+    "videoUrl": "https://www.youtube.com/2",
+    "words": [
+      { "swedish": "Meny", "english": "Menu", "status": "Mastered" },
+      { "swedish": "Servitör", "english": "Waiter", "status": "Familiar" },
+      { "swedish": "Räkning", "english": "Bill", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "applying-for-jobs",
+    "name": "3 > Applying for jobs",
+    "videoUrl": "https://youtube.com/embedHOYmLl3LHo",
+    "words": [
+      { "swedish": "CV", "english": "Resume", "status": "Mastered" },
+      { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },
+      { "swedish": "Anställning", "english": "Employment", "status": "Unfamiliar" },
+      { "swedish": "Lön", "english": "Salary", "status": "Unfamiliar" },
+      { "swedish": "Uppsägningsperiod", "english": "Notice period", "status": "Familiar" },
+      { "swedish": "Tillsvidareanställning", "english": "Permanent employment", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "travel-essentials",
+    "name": "4 > Travel essentials",
+    "videoUrl": "https://www.youtube.com/4",
+    "words": [
+      { "swedish": "Pass", "english": "Passport", "status": "Mastered" },
+      { "swedish": "Biljett", "english": "Ticket", "status": "Familiar" },
+      { "swedish": "Bagage", "english": "Baggage", "status": "Unfamiliar" },
+      { "swedish": "Resväg", "english": "Itinerary", "status": "Mastered" }
+    ]
+  },
+  {
+    "themeUrl": "shopping",
+    "name": "5 > Shopping",
+    "videoUrl": "https://www.youtube.com/5",
+    "words": [
+      { "swedish": "Butik", "english": "Store", "status": "Familiar" },
+      { "swedish": "Kvitto", "english": "Receipt", "status": "Unfamiliar" },
+      { "swedish": "Rabatt", "english": "Discount", "status": "Familiar" },
+      { "swedish": "Expedit", "english": "Shop assistant", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "at-the-hotel",
+    "name": "6 > At the hotel",
+    "videoUrl": "https://www.youtube.com/6",
+    "words": [
+      { "swedish": "Reception", "english": "Reception", "status": "Mastered" },
+      { "swedish": "Nyckel", "english": "Key", "status": "Familiar" },
+      { "swedish": "Bokning", "english": "Booking", "status": "Familiar" },
+      { "swedish": "Utcheckning", "english": "Check-out", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "health-and-emergencies",
+    "name": "7 > Health and emergencies",
+    "videoUrl": "https://www.youtube.com/7",
+    "words": [
+      { "swedish": "Apotek", "english": "Pharmacy", "status": "Familiar" },
+      { "swedish": "Sjuk", "english": "Sick", "status": "Unfamiliar" },
+      { "swedish": "Ambulans", "english": "Ambulance", "status": "Mastered" },
+      { "swedish": "Nödsituation", "english": "Emergency", "status": "Unfamiliar" }
+    ]
+  },
+  {
+    "themeUrl": "making-friends",
+    "name": "8 > Making friends",
+    "videoUrl": "https://www.youtube.com/8",
+    "words": [
+      { "swedish": "Kompis", "english": "Friend", "status": "Mastered" },
+      { "swedish": "Träffas", "english": "Meet up", "status": "Familiar" },
+      { "swedish": "Skicka meddelande", "english": "Send message", "status": "Unfamiliar" },
+      { "swedish": "Kul", "english": "Fun", "status": "Mastered" }
+    ]
+  }
+]

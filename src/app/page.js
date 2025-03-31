@@ -39,6 +39,7 @@ export default function Page({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
+      <div style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}>
         <Header />
         <BgColorComponent>
           <StudentName name="John Doe" />
@@ -49,6 +50,8 @@ export default function Page({ children }) {
 
           <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
         </BgColorComponent>
+      </div>
+      <div style={{ marginTop: "520px" }}>
         <BgColorComponent bgColor="white">
           {themes.map((theme) => {
             const [number, title] = theme.name.split(" > ");
@@ -68,6 +71,7 @@ export default function Page({ children }) {
           })}
         </BgColorComponent>
         {children}
+        </div>
       </body>
     </html>
   );
