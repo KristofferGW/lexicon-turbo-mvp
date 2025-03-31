@@ -18,8 +18,9 @@ export default function Page({ children }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const computedStudentProgress = (themes) => {
+  const aggregatedStudentProgress = useMemo(() => {
     const progressCount = { Familiar: 0, Mastered: 0, Unfamiliar: 0 };
+
     themes.forEach((theme) => {
       theme.words.forEach((word) => {
         if (progressCount[word.status] !== undefined) {
@@ -27,14 +28,13 @@ export default function Page({ children }) {
         }
       });
     });
+
     return [
       { category: "Familiar", value: progressCount.Familiar },
       { category: "Mastered", value: progressCount.Mastered },
-      { category: "Unfamiliar", value: progressCount.Unfamiliar },
+      { category: "Familiar", value: progressCount.Unfamiliar },
     ];
-  };
-
-  const aggregatedStudentProgress = computedStudentProgress(themes);
+  }, [themes]);
 
   return (
     <html lang="en" suppressHydrationWarning>

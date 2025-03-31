@@ -26,17 +26,18 @@ export function ThemeProvider({ children }) {
     }, []);
 
     const updateThemeWordStatus = (themeUrl, wordIndex, newStatus) => {
-        const updatedThemes = themes.map((theme) => {
+        console.log("Before update:", JSON.stringify(themes));
+
+        setThemes(prevThemes => prevThemes.map((theme) => {
             if (theme.themeUrl === themeUrl) {
                 const updatedWords = theme.words.map((word, index) => 
-                    index === wordIndex ? { ...word, status: newStatus } : word
-            );
-            return { ...theme, words: updatedWords };
-        }
-        return theme;
-    });
-    setThemes(updatedThemes);
-};
+                    index === wordIndex ? { ...word, status: newStatus} : word
+                );
+                return { ...theme, words: updatedWords }
+            }
+            return theme;
+        }));
+    };
 
 return (
     <ThemeContext.Provider
