@@ -31,6 +31,17 @@
         { "swedish": "Uppsägningsperiod", "english": "Notice period", "status": "Familiar" },
         { "swedish": "Tillsvidareanställning", "english": "Permanent employment", "status": "Unfamiliar" }
       ]
-    }
+    },
+    {
+      "themeUrl": "travel-essentials",
+      "name": "4 > Travel essentials",
+      "videoUrl": "https://www.youtube.com/4",
+      "words": [
+        { "swedish": "Pass", "english": "Passport", "status": "Mastered" },
+        { "swedish": "Biljett", "english": "Ticket", "status": "Familiar" },
+        { "swedish": "Bagage", "english": "Baggage", "status": "Unfamiliar" },
+        { "swedish": "Resväg", "english": "Itinerary", "status": "Mastered" }
+      ]
+    }    
   ]
   
