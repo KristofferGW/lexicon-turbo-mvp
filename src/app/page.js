@@ -32,7 +32,7 @@ export default function Page({ children }) {
     return [
       { category: "Familiar", value: progressCount.Familiar },
       { category: "Mastered", value: progressCount.Mastered },
-      { category: "Familiar", value: progressCount.Unfamiliar },
+      { category: "Unfamiliar", value: progressCount.Unfamiliar },
     ];
   }, [themes]);
 
