@@ -40,15 +40,15 @@ export default function ThemeCard({ number, title, units, mastered }) {
   const bgColor = colorMap[Math.min(mastered, units)];
 
   return (
-    <div className="w-[636px] mx-auto my-4 flex justify-between items-center bg-lexicon text-white p-4 mb-2">
+    <div className="w-[636px] mx-auto my-4 flex justify-between items-center bg-lexicon text-white mb-2">
       {/* Vänstra sidan */}
-      <div>
+      <div className="pl-4">
         <span className="font-bold">{number} &gt; </span>
         {title} ({units} units)
       </div>
 
       {/* Högra sidan */}
-      <div className="text-white px-4 py-2 rounded-lg" style={{ backgroundColor: bgColor }}>
+      <div className="text-white px-4 py-5 w-[121px]" style={{ backgroundColor: bgColor }}>
         <span className="font-bold">{mastered}</span> mastered
       </div>
     </div>
