@@ -2,7 +2,7 @@
   {
     "themeUrl": "brief-greetings",
     "name": "1 > Brief greetings",
-    "videoUrl": "https://www.youtube.com/1",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Hej", "english": "Hello", "status": "Mastered" },
       { "swedish": "Hej då", "english": "Good bye", "status": "Familiar" },
@@ -42,7 +42,7 @@
   {
     "themeUrl": "eating-out",
     "name": "2 > Eating out",
-    "videoUrl": "https://www.youtube.com/2",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Meny", "english": "Menu", "status": "Mastered" },
       { "swedish": "Servitör", "english": "Waiter", "status": "Familiar" },
@@ -115,7 +115,7 @@
   {
     "themeUrl": "applying-for-jobs",
     "name": "3 > Applying for jobs",
-    "videoUrl": "https://youtube.com/embedHOYmLl3LHo",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "CV", "english": "Resume", "status": "Mastered" },
       { "swedish": "Intervju", "english": "Interview", "status": "Familiar" },
@@ -221,7 +221,7 @@
   {
     "themeUrl": "travel-essentials",
     "name": "4 > Travel essentials",
-    "videoUrl": "https://www.youtube.com/4",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Pass", "english": "Passport", "status": "Mastered" },
       { "swedish": "Biljett", "english": "Ticket", "status": "Familiar" },
@@ -232,7 +232,7 @@
   {
     "themeUrl": "shopping",
     "name": "5 > Shopping",
-    "videoUrl": "https://www.youtube.com/5",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Butik", "english": "Store", "status": "Familiar" },
       { "swedish": "Kvitto", "english": "Receipt", "status": "Unfamiliar" },
@@ -243,7 +243,7 @@
   {
     "themeUrl": "at-the-hotel",
     "name": "6 > At the hotel",
-    "videoUrl": "https://www.youtube.com/6",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Reception", "english": "Reception", "status": "Mastered" },
       { "swedish": "Nyckel", "english": "Key", "status": "Familiar" },
@@ -254,7 +254,7 @@
   {
     "themeUrl": "health-and-emergencies",
     "name": "7 > Health and emergencies",
-    "videoUrl": "https://www.youtube.com/7",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Apotek", "english": "Pharmacy", "status": "Familiar" },
       { "swedish": "Sjuk", "english": "Sick", "status": "Unfamiliar" },
@@ -265,7 +265,7 @@
   {
     "themeUrl": "making-friends",
     "name": "8 > Making friends",
-    "videoUrl": "https://www.youtube.com/8",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "words": [
       { "swedish": "Kompis", "english": "Friend", "status": "Mastered" },
       { "swedish": "Träffas", "english": "Meet up", "status": "Familiar" },
