@@ -38,7 +38,7 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
           <div className="flex flex-col justify-center border border-gray-300" style={{ width: '70%' }}>
             {visibilityState[index] && (
               <div className="flex items-center text-center border border-white">
-                <div className="px-2 py-4">
+                <div className="px-2 py-4 w-[80px]">
                   <strong>Eng</strong>
                 </div>
                 <div className="flex-grow bg-white text-black border border-gray py-4">
@@ -47,8 +47,8 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
               </div>
             )}
             {/* Första raden – Svenska */}
-            <div className="flex items-center border border-white">
-              <div className="px-2 py-4">
+            <div className="flex items-center text-center border border-white">
+              <div className="px-2 py-4 w-[80px]">
                 <strong>Sve</strong>
               </div>
               <div className="flex-grow bg-white text-black text-center border border-gray py-4">
