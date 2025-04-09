@@ -2,7 +2,7 @@ export default function VideoContainer({ videoUrl }) {
     return (
       <div className="flex justify-center items-center">
         <iframe
-          width="560"
+          width="636"
           height="315"
           src={videoUrl}
           title="YouTube video"
