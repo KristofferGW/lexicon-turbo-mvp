@@ -51,7 +51,7 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
               <div className="px-2 py-4 w-[80px]">
                 <strong>Sve</strong>
               </div>
-              <div className="flex-grow bg-white text-black text-center border border-gray py-4">
+              <div className={`flex-grow bg-white text-black text-center border border-gray ${visibilityState[index] ? 'py-4' : 'h-[116.5px] flex items-center justify-center'}`}>
                 {item.swedish}
               </div>
             </div>
