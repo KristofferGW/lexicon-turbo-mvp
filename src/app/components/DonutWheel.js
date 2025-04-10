@@ -4,7 +4,7 @@ const COLORS = ["#FDE047", "#4CAF50", "#F44336"]; // Orange, Green, Red
 
 export default function DonutWheel({ studentProgress }) {
   return (
-    <PieChart width={400} height={300}>
+    <PieChart width={440} height={300}>
       <Pie
         data={studentProgress}
         nameKey="category"
