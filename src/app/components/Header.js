@@ -9,7 +9,7 @@ const Header = () => {
         </Link>
         
         <nav>
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-2 sm:space-x-6">
             <li>
               <Link href="/settings" className="text-white hover:text-gray-200">
                 Settings
