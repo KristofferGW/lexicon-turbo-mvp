@@ -25,10 +25,9 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
   };
 
   return (
-    <div className="w-[636px] bg-lexicon mx-auto text-white">
+    <div className="w-full max-w-[636px] mx-auto bg-lexicon text-white">
       {words.map((item, index) => (
-        // Använd min-h-[50px] istället för h-[50px] så att raden kan växa vid behov
-        <div key={index} className="flex min-h-[50px] text-white">
+        <div key={index} className="flex min-h-[50px] sm:min-h-[60px] text-white">
           {/* Sifferkolumn */}
           <div className="flex items-center justify-center border border-gray-300 px-2" style={{ width: '5%' }}>
             {index + 1}
