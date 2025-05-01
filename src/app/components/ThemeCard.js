@@ -40,16 +40,19 @@ export default function ThemeCard({ number, title, units, mastered }) {
   const bgColor = colorMap[Math.min(mastered, units)];
 
   return (
-    <div className="w-[636px] mx-auto my-4 flex justify-between items-center bg-lexicon text-white mb-2">
+    <div className="w-full max-w-[636px] mx-auto my-4 flex justify-between items-center bg-lexicon text-white mb-2">
       {/* Vänstra sidan */}
-      <div className="pl-4">
+      <div className="pl-4 py-3 flex-grow truncate">
         <span className="font-bold">{number} &gt; </span>
-        {title} ({units} units)
+        <span className="hidden sm:inline">{title}</span>
+        <span className="sm:hidden">{title.length > 15 ? `${title.substring(0, 15)}...` : title}</span>
+        <span className="hidden sm:inline"> ({units} units)</span>
       </div>
 
       {/* Högra sidan */}
-      <div className="text-white px-4 py-5 w-[121px]" style={{ backgroundColor: bgColor }}>
-        <span className="font-bold">{mastered}</span> mastered
+      <div className="text-white px-2 py-4 sm:px-4 w-24 sm:w-32 text-center flex items-center justify-center" style={{ backgroundColor: bgColor }}>
+        <span className="font-bold">{mastered}</span>
+        <span className="ml-1">mastered</span>
       </div>
     </div>
   );

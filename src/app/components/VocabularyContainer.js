@@ -25,10 +25,9 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
   };
 
   return (
-    <div className="w-[636px] bg-lexicon mx-auto text-white">
+    <div className="w-full max-w-[636px] mx-auto bg-lexicon text-white">
       {words.map((item, index) => (
-        // Använd min-h-[50px] istället för h-[50px] så att raden kan växa vid behov
-        <div key={index} className="flex min-h-[50px] text-white">
+        <div key={index} className="flex min-h-[50px] sm:min-h-[60px] text-white">
           {/* Sifferkolumn */}
           <div className="flex items-center justify-center border border-gray-300 px-2" style={{ width: '5%' }}>
             {index + 1}
@@ -77,19 +76,22 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
               className={`flex-1 w-full bg-green-500 flex items-center justify-center cursor-pointer ${item.status !== "Mastered" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Mastered")}
             >
-              Mastered
+              <span className="block sm:hidden">Mas.</span>
+              <span className="hidden sm:block">Mastered</span>
             </div>
             <div 
               className={`flex-1 w-full bg-lexiconyellow flex items-center justify-center cursor-pointer ${item.status !== "Familiar" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Familiar")}
             >
-              Familiar
+              <span className="block sm:hidden">Fam.</span>
+              <span className="hidden sm:block">Familiar</span>
             </div>
             <div 
               className={`flex-1 w-full bg-red-500 flex items-center justify-center cursor-pointer ${item.status !== "Unfamiliar" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Unfamiliar")}
             >
-              Unfamiliar
+              <span className="block sm:hidden">Unf.</span>
+              <span className="hidden sm:block">Unfamiliar</span>
             </div>
           </div>
         </div>

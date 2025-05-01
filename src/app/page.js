@@ -48,7 +48,7 @@ export default function Page({ children }) {
           <DonutWheel studentProgress={aggregatedStudentProgress} />
           </div>
 
-          <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" />
+          <H2Container headline="👇 Learn more Swedish lexicon units by clicking on the interaction types below 👇" shortHeadline="👇 More Swedish lexicon units 👇" />
         </BgColorComponent>
       </div>
       <div style={{ marginTop: "520px" }}>
