@@ -76,19 +76,22 @@ export default function VocabularyContainer({ words, showEnglish, onUpdateWordSt
               className={`flex-1 w-full bg-green-500 flex items-center justify-center cursor-pointer ${item.status !== "Mastered" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Mastered")}
             >
-              Mastered
+              <span className="block sm:hidden">Mas.</span>
+              <span className="hidden sm:block">Mastered</span>
             </div>
             <div 
               className={`flex-1 w-full bg-lexiconyellow flex items-center justify-center cursor-pointer ${item.status !== "Familiar" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Familiar")}
             >
-              Familiar
+              <span className="block sm:hidden">Fam.</span>
+              <span className="hidden sm:block">Familiar</span>
             </div>
             <div 
               className={`flex-1 w-full bg-red-500 flex items-center justify-center cursor-pointer ${item.status !== "Unfamiliar" ? "opacity-50" : ""}`}
               onClick={() => updateLearningStatus(index, "Unfamiliar")}
             >
-              Unfamiliar
+              <span className="block sm:hidden">Unf.</span>
+              <span className="hidden sm:block">Unfamiliar</span>
             </div>
           </div>
         </div>

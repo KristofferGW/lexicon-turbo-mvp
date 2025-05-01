@@ -36,7 +36,7 @@ export default function ThemePage() {
           <VocabularyHeadings onEyeClick={toggleEnglish} />
         </BgColorComponent>
       </div>
-      <div className="pt-[360px] sm:pt-[520px]">
+      <div className="pt-[356px] sm:pt-[528px]">
         <BgColorComponent bgColor="white" />
         <VocabularyContainer
           words={themeData.words}
